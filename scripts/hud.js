@@ -66,26 +66,26 @@ export function adjustHUDPosition(hud, html) {
   console.log('projection', projection);
   */
 
-  if (object instanceof Token) {
+  if (object instanceof foundry.canvas.placeables.Token) {
     const topCenter = calculateIsometricPosition(x, y);
     
-    // html.css({
-    //   left: `${topCenter.x}px`,
-    //   top:  `${topCenter.y}px`,
-    //   transform: 'translate(33%, -50%)'
-    // });
+    Object.assign(html.style, {
+      left: `${topCenter.x}px`,
+      top:  `${topCenter.y}px`,
+      transform: 'translate(33%, -50%)'
+    });
   }
   
-  else if (object instanceof Tile) {
+  else if (object instanceof foundry.canvas.placeables.Tile) {
     const topCenter = calculateIsometricPosition(x, y);
     //const offsetY = height * Math.sin(Math.PI / 6);
 
     // Adjusts the HUD's position
-    // html.css({
-    //   left: `${topCenter.x}px`,
-    //   top: `${topCenter.y}px`,
-    //   //transform: 'translate(0%, 0%)' // Centers horizontally and positions above the token
-    // });
+    Object.assign(html.style, {
+      left: `${topCenter.x}px`,
+      top: `${topCenter.y}px`,
+      //transform: 'translate(0%, 0%)' // Centers horizontally and positions above the token
+    });
   }
 }
 
