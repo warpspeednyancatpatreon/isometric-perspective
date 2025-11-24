@@ -105,7 +105,7 @@ export function applyIsometricTransformation(object, isSceneIsometric) {
   
   
   
-  if (object instanceof Token) {
+  if (object instanceof foundry.canvas.placeables.Token) {
     let sx = 1; // standard x
     let sy = 1; // standard y
     let objTxtRatio_W = object.texture.width / canvas.scene.grid.size;
@@ -189,7 +189,7 @@ export function applyIsometricTransformation(object, isSceneIsometric) {
   
   
   // If the object is a tile
-  else if (object instanceof Tile) {
+  else if (object instanceof foundry.canvas.placeables.Tile) {
     //const sceneScale = canvas.scene.getFlag(isometricModuleConfig.MODULE_ID, "isometricScale") ?? 1;
     
     // Apply the scale by maintaining the proportion of the original art
