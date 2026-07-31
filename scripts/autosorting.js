@@ -15,6 +15,7 @@ export function isoDepthSortTileMixin(Base) {
       if (isTileSortable) {
         this.mesh.sortLayer =
           foundry.canvas.groups.PrimaryCanvasGroup.SORT_LAYERS.TOKENS;
+          applyDepthSort();
       } else {
         this.mesh.sortLayer =
           foundry.canvas.groups.PrimaryCanvasGroup.SORT_LAYERS.TILES;
