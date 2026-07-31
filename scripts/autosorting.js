@@ -17,8 +17,10 @@ export function isoDepthSortTileMixin(Base) {
           foundry.canvas.groups.PrimaryCanvasGroup.SORT_LAYERS.TOKENS;
           applyDepthSort();
       } else {
-        this.mesh.sortLayer =
-          foundry.canvas.groups.PrimaryCanvasGroup.SORT_LAYERS.TILES;
+        if(this.mesh){
+          this.mesh.sortLayer =
+            foundry.canvas.groups.PrimaryCanvasGroup.SORT_LAYERS.TILES;
+        }
       }
     }
     _onUpdate(changed, options, userId) {
